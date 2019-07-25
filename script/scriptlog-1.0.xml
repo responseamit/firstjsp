@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	<changeSet author="liquibase-docsAuthor" id="ID_ROLLBACK_FULL_REVERT">
+		<tagDatabase tag="ROLLBACK_FULL_REVERT"/>
+	</changeSet>
+
+	 <changeSet id="initSchema" author="initSchemaAuthor">
+		<sqlFile path="initSchema.sql" relativeToChangelogFile="true"/>
+		<rollback>
+			<sqlFile path="revertInitSchema.sql" relativeToChangelogFile="true"/>
+		</rollback>
+	</changeSet>
+
+	<changeSet author="liquibase-docsAuthor" id="ID_ROLLBACK_UPDATE_SCHEMA">
+		<tagDatabase tag="ROLLBACK_UPDATE_SCHEMA"/>
+	</changeSet>	
+	 <changeSet id="updateSchema" author="updateSchemaAuthor">
+		<sqlFile path="updateSchema.sql" relativeToChangelogFile="true"/>
+		<rollback>
+			<sqlFile path="revertUpdateSchema.sql" relativeToChangelogFile="true"/>
+		</rollback>
+	</changeSet>	
+	
+	<changeSet author="liquibase-docsAuthor" id="ID_ROLLBACK_POPULATE_DATA">
+		<tagDatabase tag="ROLLBACK_POPULATE_DATA"/>
+	</changeSet>
+	
+	 <changeSet id="polulateData" author="polulateDataAuthor">
+		<sqlFile path="polulateData.sql" relativeToChangelogFile="true"/>
+		<rollback>
+			<sqlFile path="revertPopulateData.sql" relativeToChangelogFile="true"/>
+		</rollback>
+	</changeSet>
+	
+	
+
+	  
+</databaseChangeLog> 
+
+ 
