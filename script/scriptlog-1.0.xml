@@ -35,7 +35,9 @@
 		</rollback>
 	</changeSet>
 	
-	
+	<changeSet author="liquibase-docsAuthor" id="ID_ROLLBACK_DUMMY">
+		<tagDatabase tag="ROLLBACK_DUMMY"/>
+	</changeSet>	
 
 	  
 </databaseChangeLog> 
